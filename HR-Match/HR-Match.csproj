@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{126C74F2-2EE1-4788-82B7-BB5B2028CE72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HR_Match</RootNamespace>
+    <AssemblyName>HR-Match</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddAdvertisementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAdvertisementForm.Designer.cs">
+      <DependentUpon>AddAdvertisementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCVForm.Designer.cs">
+      <DependentUpon>AddCVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppliedAdvertisementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppliedAdvertisementsForm.Designer.cs">
+      <DependentUpon>AppliedAdvertisementsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\HREntity.cs" />
+    <Compile Include="EmployerAppliesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerAppliesForm.Designer.cs">
+      <DependentUpon>EmployerAppliesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployerCandidateDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerCandidateDetailsForm.Designer.cs">
+      <DependentUpon>EmployerCandidateDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerMain.Designer.cs">
+      <DependentUpon>EmployerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployerSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerSearchForm.Designer.cs">
+      <DependentUpon>EmployerSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Advertisement.cs" />
+    <Compile Include="Models\CurriculumVitae.cs" />
+    <Compile Include="Models\Employer.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Worker.cs" />
+    <Compile Include="Models\WorkerAdvertisement.cs" />
+    <Compile Include="SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchJobForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchJobForm.Designer.cs">
+      <DependentUpon>SearchJobForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAllAdvertisementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowAllAdvertisementsForm.Designer.cs">
+      <DependentUpon>ShowAllAdvertisementsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowCvInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowCvInfoForm.Designer.cs">
+      <DependentUpon>ShowCvInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowDetailsOfSelectedAdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowDetailsOfSelectedAdForm.Designer.cs">
+      <DependentUpon>ShowDetailsOfSelectedAdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignInForm.Designer.cs">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuggestionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuggestionsForm.Designer.cs">
+      <DependentUpon>SuggestionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerMain.Designer.cs">
+      <DependentUpon>WorkerMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddAdvertisementForm.resx">
+      <DependentUpon>AddAdvertisementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCVForm.resx">
+      <DependentUpon>AddCVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppliedAdvertisementsForm.resx">
+      <DependentUpon>AppliedAdvertisementsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerAppliesForm.resx">
+      <DependentUpon>EmployerAppliesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerCandidateDetailsForm.resx">
+      <DependentUpon>EmployerCandidateDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerMain.resx">
+      <DependentUpon>EmployerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerSearchForm.resx">
+      <DependentUpon>EmployerSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchJobForm.resx">
+      <DependentUpon>SearchJobForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowAllAdvertisementsForm.resx">
+      <DependentUpon>ShowAllAdvertisementsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowCvInfoForm.resx">
+      <DependentUpon>ShowCvInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowDetailsOfSelectedAdForm.resx">
+      <DependentUpon>ShowDetailsOfSelectedAdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignInForm.resx">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuggestionsForm.resx">
+      <DependentUpon>SuggestionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WorkerMain.resx">
+      <DependentUpon>WorkerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

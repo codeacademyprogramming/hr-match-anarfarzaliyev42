@@ -27,7 +27,7 @@ namespace HR_Match
         {
             this.advertisement = advertisement;
         }
-        CurriculumVitae isWorkerHasCv = null;
+        
         private void button1_Click(object sender, EventArgs e)
         {
             using (HREntity db = new HREntity())

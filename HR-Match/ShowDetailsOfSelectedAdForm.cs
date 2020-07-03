@@ -27,13 +27,12 @@ namespace HR_Match
         {
             this.advertisement = advertisement;
         }
+        CurriculumVitae isWorkerHasCv = null;
         private void button1_Click(object sender, EventArgs e)
         {
             using (HREntity db = new HREntity())
             {
-                    CurriculumVitae isWorkerHasCv=db.Workers.Find(worker.Id).CurriculumVitae;
-                if (isWorkerHasCv != null)
-                {
+                
                     bool isWorkerApplied = db.WorkerAdvertisemets.ToList().Exists(x => x.WorkerId == worker.Id && x.AdvertisementId == advertisement.Id);
                     if (isWorkerApplied)
                     {
@@ -44,11 +43,8 @@ namespace HR_Match
 
                     db.SaveChanges();
                     MessageBox.Show($"You succesfully applied", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    MessageBox.Show($"Firstly you must add cv", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }   
+                
+                 
                
 
 
@@ -57,6 +53,7 @@ namespace HR_Match
 
         private void ShowDetailsOfSelectedAdForm_Load(object sender, EventArgs e)
         {
+          
             tbxAdName.Text = advertisement.AdvertisementName;
             tbxAdName.Enabled = false;
             tbxCompanyName.Text = advertisement.CompanyName;

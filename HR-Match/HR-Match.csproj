@@ -102,7 +102,6 @@
     <Compile Include="Models\Advertisement.cs" />
     <Compile Include="Models\CurriculumVitae.cs" />
     <Compile Include="Models\Employer.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Worker.cs" />
     <Compile Include="Models\WorkerAdvertisement.cs" />
     <Compile Include="SearchForm.cs">

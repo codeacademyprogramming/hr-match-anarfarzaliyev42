@@ -120,9 +120,21 @@ namespace HR_Match
 
         private void butunElanlariGosterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowAllAdvertisementsForm showAllAdvertisementsForm = new ShowAllAdvertisementsForm();
-            showAllAdvertisementsForm.GetWorker(worker);
-            showAllAdvertisementsForm.ShowDialog();
+            using (HREntity db = new HREntity())
+            {
+                var isWorkerAddedCv = db.CurriculumVitaes.ToList().Exists(x => x.Id == worker.Id);
+                if (isWorkerAddedCv)
+                {
+                    ShowAllAdvertisementsForm showAllAdvertisementsForm = new ShowAllAdvertisementsForm();
+                    showAllAdvertisementsForm.GetWorker(worker);
+                    showAllAdvertisementsForm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Firstly you must add cv");
+                }
+            }
+            
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)

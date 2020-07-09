@@ -13,7 +13,7 @@ namespace HR_Match.Models
 
         public Worker()
         {
-            Advertisements = new List<Advertisement>();
+            WorkerAdvertisements = new List<WorkerAdvertisement>();
         }
       
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -32,6 +32,6 @@ namespace HR_Match.Models
         [MaxLength(50)]
         public string Password { get; set; }
         public CurriculumVitae CurriculumVitae { get; set; }
-        public ICollection<Advertisement> Advertisements { get; set; }
+        public ICollection<WorkerAdvertisement> WorkerAdvertisements { get; set; }
     }
 }

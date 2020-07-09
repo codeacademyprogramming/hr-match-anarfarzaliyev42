@@ -15,7 +15,7 @@ namespace HR_Match.Models
 
         public Advertisement()
         {
-            Workers = new List<Worker>();
+            WorkerAdvertisements = new List<WorkerAdvertisement>();
         }
         
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -53,7 +53,7 @@ namespace HR_Match.Models
         public int EmployerId { get; set; }
         public Employer Employer { get; set; }
 
-        public ICollection<Worker> Workers { get; set; }
+        public ICollection<WorkerAdvertisement> WorkerAdvertisements { get; set; }
 
 
     }

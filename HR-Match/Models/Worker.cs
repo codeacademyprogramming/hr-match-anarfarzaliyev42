@@ -25,9 +25,7 @@ namespace HR_Match.Models
         [Column(TypeName = "nvarchar")]
         [MaxLength(50)]
         public string Email { get; set; }
-        //[Column(TypeName = "nvarchar")]
-        //[MaxLength(50)]
-        //public string Status { get; set; }
+       
         [Column(TypeName = "nvarchar")]
         [MaxLength(50)]
         public string Password { get; set; }
